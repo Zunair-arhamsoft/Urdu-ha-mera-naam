@@ -5,111 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>اردو ہے میرا نام</title>
 
+    <!-- External CSS -->
+    <link rel="stylesheet" href="css/styles.css" />
+
     <!-- GSAP + ScrollTrigger CDN -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
-
-    <style>
-      @font-face {
-        font-family: "Jameel Noori Nastaleeq";
-        src: url("assets/fonts/Jameel-Noori-Nastaleeq.ttf") format("truetype");
-      }
-
-      html {
-        scroll-behavior: smooth;
-      }
-
-      * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-      }
-
-      body {
-        background: url("assets/images/image-bg.jpg") no-repeat center center
-          fixed;
-        background-size: cover;
-        color: #fff;
-        font-family: "Jameel Noori Nastaleeq", "Noto Nastaliq Urdu", serif;
-        overflow-x: hidden;
-        position: relative;
-      }
-
-      body::before {
-        content: "";
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background-color: rgba(27, 27, 27, 0.7);
-        z-index: -1;
-      }
-
-      .hero {
-        height: 100vh;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        flex-direction: column;
-        text-align: center;
-        padding: 2rem;
-      }
-
-      .hero-text {
-        font-size: 3rem;
-        line-height: 1.8;
-      }
-
-      .subtext {
-        font-size: 1.2rem;
-        color: #aaa;
-        margin-top: 1rem;
-        font-family: sans-serif;
-        letter-spacing: 1px;
-      }
-
-      .intro {
-        max-width: 800px;
-        margin: 0 auto;
-        padding: 5rem 2rem;
-        font-size: 2rem;
-        line-height: 2.8rem;
-      }
-
-      .intro p {
-        opacity: 0;
-        transform: translateY(50px);
-      }
-
-      .mb-20 {
-        margin-bottom: 20px;
-      }
-
-      .wali-slide {
-        height: 100vh;
-        background: url("assets/images/wali-bg.jpg") no-repeat center center
-          fixed;
-        background-size: cover;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        opacity: 0;
-      }
-
-      .wali-line {
-        font-size: 2.5rem;
-        color: #fff;
-        text-align: center;
-        opacity: 0;
-      }
-
-      #wali-name {
-        color: #ffd700;
-        font-weight: bold;
-        cursor: pointer;
-      }
-    </style>
   </head>
 
   <body>
@@ -151,73 +52,6 @@
       </div>
     </div>
 
-    <script>
-      gsap.registerPlugin(ScrollTrigger);
-
-      // Fade out hero section on scroll
-      gsap.to("#hero", {
-        scrollTrigger: {
-          trigger: "#intro",
-          start: "top 100%",
-          scrub: 1,
-        },
-        opacity: 0,
-      });
-
-      // Animate each paragraph in .intro with stagger
-      ScrollTrigger.batch(".intro p", {
-        start: "top 65%",
-        end: "bottom 60%",
-        scrub: true,
-
-        onEnter: (batch) =>
-          gsap.to(batch, {
-            opacity: 1,
-            y: 0,
-            stagger: 0.3,
-            duration: 1,
-            ease: "power2.out",
-          }),
-
-        onLeave: (batch) =>
-          gsap.to(batch, {
-            opacity: 0,
-            y: -50,
-            stagger: 0.1,
-            duration: 0.5,
-            ease: "power2.in",
-          }),
-
-        onEnterBack: (batch) =>
-          gsap.to(batch, {
-            opacity: 1,
-            y: 0,
-            stagger: 0.3,
-            duration: 1,
-            ease: "power2.out",
-          }),
-
-        onLeaveBack: (batch) =>
-          gsap.to(batch, {
-            opacity: 0,
-            y: 50,
-            stagger: 0.1,
-            duration: 0.5,
-            ease: "power2.in",
-          }),
-      });
-
-      gsap
-        .timeline({
-          scrollTrigger: {
-            trigger: "#wali-slide",
-            start: "top 99%",
-            end: "top 20%",
-            scrub: true,
-          },
-        })
-        .to("#wali-slide", { opacity: 1, ease: "none" })
-        .to("#wali-line", { opacity: 1, ease: "none" }, "<");
-    </script>
+    <script src="js/main.js"></script>
   </body>
 </html>

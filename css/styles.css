@@ -1,0 +1,98 @@
+@font-face {
+    font-family: "Jameel Noori Nastaleeq";
+    src: url("../assets/fonts/Jameel-Noori-Nastaleeq.ttf") format("truetype");
+  }
+  
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    background: url("../assets/images/image-bg.jpg") no-repeat center center fixed;
+    background-size: cover;
+    color: #fff;
+    font-family: "Jameel Noori Nastaleeq", "Noto Nastaliq Urdu", serif;
+    overflow-x: hidden;
+    position: relative;
+  }
+  
+  body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(27, 27, 27, 0.7);
+    z-index: -1;
+  }
+  
+  .hero {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    padding: 2rem;
+  }
+  
+  .hero-text {
+    font-size: 3rem;
+    line-height: 1.8;
+  }
+  
+  .subtext {
+    font-size: 1.2rem;
+    color: #aaa;
+    margin-top: 1rem;
+    font-family: sans-serif;
+    letter-spacing: 1px;
+  }
+  
+  .intro {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 5rem 2rem;
+    font-size: 2rem;
+    line-height: 2.8rem;
+  }
+  
+  .intro p {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  
+  .mb-20 {
+    margin-bottom: 20px;
+  }
+  
+  .wali-slide {
+    height: 100vh;
+    background: url("../assets/images/wali-bg.jpg") no-repeat center center fixed;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+  }
+  
+  .wali-line {
+    font-size: 2.5rem;
+    color: #fff;
+    text-align: center;
+    opacity: 0;
+  }
+  
+  #wali-name {
+    color: #ffd700;
+    font-weight: bold;
+    cursor: pointer;
+  }
+  
