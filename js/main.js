@@ -5,7 +5,8 @@ gsap.to("#hero", {
     scrollTrigger: {
         trigger: "#intro",
         start: "top 100%",
-        scrub: 1,
+        end: "top 35%",
+        scrub: 0.3,
     },
     opacity: 0,
 });
