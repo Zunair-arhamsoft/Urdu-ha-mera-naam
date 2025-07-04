@@ -94,3 +94,19 @@ gsap.to(".hero-text", {
         scrub: true,
     },
 });
+document.querySelectorAll(".wali-intro").forEach((p) => {
+    const tl = gsap.timeline({
+        scrollTrigger: {
+            trigger: p,
+            start: "top 90%",
+            end: "top 10%",
+            scrub: true,
+        },
+    });
+
+    tl.fromTo(
+        p,
+        { opacity: 0, y: 20 },
+        { opacity: 1, y: 0, ease: "none", duration: 0.3 }
+    ).to(p, { opacity: 0, y: -20, ease: "none", duration: 0.3 });
+});
