@@ -11,47 +11,22 @@ gsap.to("#hero", {
     opacity: 0,
 });
 
-// Animate each paragraph in .intro with stagger
-ScrollTrigger.batch(".intro p", {
-    start: "top 65%",
-    end: "bottom 60%",
-    scrub: true,
+document.querySelectorAll("#intro p").forEach((p) => {
+    const tl = gsap.timeline({
+        scrollTrigger: {
+            trigger: p,
+            start: "top 90%",
+            end: "top 10%",
+            scrub: true,
+        }
+    });
 
-    onEnter: (batch) =>
-        gsap.to(batch, {
-            opacity: 1,
-            y: 0,
-            stagger: 0.3,
-            duration: 1,
-            ease: "power2.out",
-        }),
-
-    onLeave: (batch) =>
-        gsap.to(batch, {
-            opacity: 0,
-            y: -50,
-            stagger: 0.1,
-            duration: 0.5,
-            ease: "power2.in",
-        }),
-
-    onEnterBack: (batch) =>
-        gsap.to(batch, {
-            opacity: 1,
-            y: 0,
-            stagger: 0.3,
-            duration: 1,
-            ease: "power2.out",
-        }),
-
-    onLeaveBack: (batch) =>
-        gsap.to(batch, {
-            opacity: 0,
-            y: 50,
-            stagger: 0.1,
-            duration: 0.5,
-            ease: "power2.in",
-        }),
+    tl.fromTo(
+        p,
+        { opacity: 0, y: 20 },
+        { opacity: 1, y: 0, ease: "none", duration: 0.3 }
+    )
+        .to(p, { opacity: 0, y: -20, ease: "none", duration: 0.3 });
 });
 
 // Wali Slide Animation
