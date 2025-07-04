@@ -30,17 +30,24 @@ document.querySelectorAll("#intro p").forEach((p) => {
 });
 
 // Wali Slide Animation
-gsap
-    .timeline({
-        scrollTrigger: {
-            trigger: "#wali-slide",
-            start: "top 99%",
-            end: "top 20%",
-            scrub: true,
-        },
-    })
-    .to("#wali-slide", { opacity: 1, ease: "none" })
-    .to("#wali-line", { opacity: 1, ease: "none" }, "<");
+gsap.timeline({
+    scrollTrigger: {
+        trigger: "#wali-slide",
+        start: "top 0%",
+        end: "+=60%",
+        scrub: true,
+        pin: "#wali-slide",
+        anticipatePin: 1,
+    },
+})
+    .fromTo("#wali-line",
+        { opacity: 0 },
+        { opacity: 1, duration: 1 }
+    )
+    .to("#wali-line",
+        { opacity: 0, duration: 1 }
+    );
+
 
 // ---------------- Additional fun on-scroll animations ----------------
 
