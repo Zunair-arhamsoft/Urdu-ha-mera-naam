@@ -1,162 +1,166 @@
 @font-face {
-    font-family: "Jameel Noori Nastaleeq";
-    src: url("../assets/fonts/Jameel-Noori-Nastaleeq.ttf") format("truetype");
-  }
-  
-  html {
-    scroll-behavior: smooth;
-  }
-  
-  * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
-  
-  body {
-    background: url("../assets/images/image-bg.jpg") no-repeat center center fixed;
-    background-size: cover;
-    color: #fff;
-    font-family: "Jameel Noori Nastaleeq", "Noto Nastaliq Urdu", serif;
-    overflow-x: hidden;
-    position: relative;
-  }
-  
-  body::before {
-    content: "";
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(27, 27, 27, 0.7);
-    z-index: -1;
-  }
-  
-  .hero {
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    text-align: center;
-    padding: 2rem;
-  }
-  
-  .hero-text {
-    font-size: 3rem;
-    line-height: 1.8;
-  }
-  
-  .subtext {
-    font-size: 1.2rem;
-    color: #aaa;
-    margin-top: 1rem;
-    font-family: sans-serif;
-    letter-spacing: 1px;
-  }
-  
-  .intro {
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 5rem 2rem;
-    font-size: 2rem;
-    line-height: 2.8rem;
-  }
-  
-  .intro p {
-    opacity: 0;
-    transform: translateY(50px);
-  }
-  
-  .mb-50 {
-    margin-bottom: 50px;
-  }
-  
-  .wali-slide {
-    height: 100vh;
-    background: url("../assets/images/wali-bg.jpg") no-repeat center center fixed;
-    background-size: cover;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    opacity: 0;
-  }
-  
-  .wali-line {
-    font-size: 2.5rem;
-    color: #fff;
-    text-align: center;
-    opacity: 0;
-  }
-  
-  #wali-name {
-    color: #ffd700;
-    font-weight: bold;
-    cursor: pointer;
-  }
-  .wali-bio {
-    min-height: 100vh;
-    padding: 4rem 2rem;
-    display: flex;
-    align-items: center; /* Center vertically */
-    justify-content: center;
-    background: url("../assets/images/wali-bg.jpg") no-repeat center center fixed;
-    background-size: cover;
-    color: #fff;
-  }
-  
-  .wali-bio-content {
-    display: flex;
-    flex-direction: row-reverse; /* Switches order: left becomes right */
-    justify-content: center;
-    align-items: center; /* Vertically center both columns */
-    flex-wrap: wrap;
-    gap: 4rem;
-    max-width: 1200px;
-    width: 100%;
-  }
-  
-  /* RIGHT SIDE (actually appears on the left now) */
-  .wali-right {
-    flex: 2;
-    min-width: 300px;
-    font-size: 2rem;
-    line-height: 2.6rem;
-    text-align: justify;
-    padding: 5rem 2rem;
-
-    line-height: 2.8rem;
-  }
-  
-  /* LEFT SIDE (name, image, etc.) */
-  .wali-left {
-    flex: 1;
-    min-width: 280px;
-    text-align: center;
-  }
-  
-  .wali-left h2 {
-    font-size: 2.5rem;
-    margin-bottom: 1rem;
-    color: #ffd700;
-  }
-  
-  .wali-image img {
-    width: 200px;
-    border-radius: 1rem;
-    box-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
-    margin-bottom: 1rem;
-  }
-  
-  .wali-dates {
-    font-size: 1.1rem;
-    color: #ccc;
-    margin-bottom: 1rem;
-  }
-  
-  .wali-shayr p {
-    font-size: 1.6rem;
-    margin: 0.3rem 0;
-  }
-  
+  font-family: "Jameel Noori Nastaleeq";
+  src: url("../assets/fonts/Jameel-Noori-Nastaleeq.ttf") format("truetype");
+}
+ 
+html {
+  scroll-behavior: smooth;
+}
+ 
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+ 
+body {
+  background: url("../assets/images/image-bg.jpg") no-repeat center center fixed;
+  background-size: cover;
+  color: #fff;
+  font-family: "Jameel Noori Nastaleeq", "Noto Nastaliq Urdu", serif;
+  /* overflow-x: hidden; */
+  position: relative;
+}
+ 
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(27, 27, 27, 0.7);
+  z-index: -1;
+}
+ 
+.hero {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+  padding: 2rem;
+}
+ 
+.hero-text {
+  font-size: 3rem;
+  line-height: 1.8;
+}
+ 
+.subtext {
+  font-size: 1.2rem;
+  color: #aaa;
+  margin-top: 1rem;
+  font-family: sans-serif;
+  letter-spacing: 1px;
+}
+ 
+.intro {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 5rem 2rem;
+  font-size: 2rem;
+  line-height: 2.8rem;
+}
+ 
+.intro p {
+  opacity: 0;
+  transform: translateY(50px);
+}
+ 
+.mb-50 {
+  margin-bottom: 50px;
+}
+ 
+.content-wrapper {
+  background: url("../assets/images/wali-bg.jpg") no-repeat center center fixed;
+  background-size: cover;
+  position: relative;
+}
+ 
+.wali-slide {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+}
+ 
+.wali-line {
+  font-size: 2.5rem;
+  color: #fff;
+  text-align: center;
+  /* opacity: 0; */
+}
+ 
+#wali-name {
+  color: #ffd700;
+  font-weight: bold;
+  cursor: pointer;
+}
+ 
+.wali-bio {
+  min-height: 100vh;
+  padding: 4rem 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  height: auto;
+  overflow: visible;
+}
+ 
+.wali-bio-content {
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: center;
+  gap: 4rem;
+  max-width: 1200px;
+  width: 100%;
+  align-items: flex-start;
+}
+ 
+.wali-left {
+  flex: 1;
+  min-width: 280px;
+  text-align: center;
+  position: sticky;
+  top: 80px;
+  align-self: flex-start;
+}
+ 
+.wali-right {
+  flex: 2;
+  min-width: 300px;
+  font-size: 2rem;
+  line-height: 2.6rem;
+  text-align: justify;
+  line-height: 2.8rem;
+}
+.wali-right p:not(:last-child){
+  margin-bottom: 30px;
+}
+.wali-left h2 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  color: #ffd700;
+}
+ 
+.wali-image img {
+  width: 200px;
+  border-radius: 1rem;
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
+  margin-bottom: 1rem;
+}
+ 
+.wali-dates {
+  font-size: 1.1rem;
+  color: #ccc;
+  margin-bottom: 1rem;
+}
+ 
+.wali-shayr p {
+  font-size: 1.6rem;
+  margin: 0.3rem 0;
+}

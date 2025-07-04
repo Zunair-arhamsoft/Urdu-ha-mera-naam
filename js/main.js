@@ -41,3 +41,49 @@ gsap
     })
     .to("#wali-slide", { opacity: 1, ease: "none" })
     .to("#wali-line", { opacity: 1, ease: "none" }, "<");
+
+// ---------------- Additional fun on-scroll animations ----------------
+
+// 1. Parallax effect for the background of the content wrapper
+gsap.to(".content-wrapper", {
+    backgroundPositionY: "40%",
+    ease: "none",
+    scrollTrigger: {
+        trigger: ".content-wrapper",
+        start: "top bottom",
+        end: "bottom top",
+        scrub: true,
+    },
+});
+
+// 2. Reveal columns in the Wali bio section
+gsap.timeline({
+    scrollTrigger: {
+        trigger: "#wali-bio",
+        start: "top 80%",
+        end: "top 20%",
+        scrub: true,
+    },
+})
+    .from(".wali-left", { xPercent: -50, opacity: 0, ease: "power1.out" })
+    .from(".wali-right", { xPercent: 50, opacity: 0, ease: "power1.out" }, "<")
+    .from(".wali-image img", {
+        rotationY: 180,
+        scale: 0,
+        opacity: 0,
+        transformOrigin: "center center",
+        ease: "back.out(1.7)",
+    }, "-=" + 0.2);
+
+// 3. Hero text subtle zoom and tilt while scrolling out
+gsap.to(".hero-text", {
+    scale: 1.1,
+    rotation: 2,
+    transformOrigin: "center center",
+    scrollTrigger: {
+        trigger: "#hero",
+        start: "top top",
+        end: "bottom top",
+        scrub: true,
+    },
+});
